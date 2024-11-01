@@ -121,18 +121,41 @@
             .then(response => response.json())
             .then(data => {
                 correctPassword = data.password;
+                checkStoredPassword();
             })
             .catch(error => {
                 console.error("Fehler beim Laden des Passworts:", error);
             });
 
-        // Passwortüberprüfung
+        // Funktion zum Überprüfen des gespeicherten Passworts und Datums im Local Storage
+        function checkStoredPassword() {
+            const storedPassword = localStorage.getItem("storedPassword");
+            const storedDate = localStorage.getItem("passwordDate");
+            const today = new Date().toISOString().split('T')[0]; // Heutiges Datum im Format YYYY-MM-DD
+
+            if (storedPassword === correctPassword && storedDate === today) {
+                showProtectedContent(); // Passwort ist noch gültig, zeige geschützten Inhalt
+            } else {
+                localStorage.removeItem("storedPassword"); // Entferne alte Daten
+                localStorage.removeItem("passwordDate");
+            }
+        }
+
+        // Funktion zum Anzeigen des geschützten Inhalts
+        function showProtectedContent() {
+            document.getElementById("password-container").style.display = "none";
+            document.getElementById("protected-content").style.display = "flex";
+        }
+
+        // Passwortüberprüfung und Speichern im Local Storage
         document.getElementById("submit-button").addEventListener("click", function() {
             const input = document.getElementById("password-input").value;
 
             if (input === correctPassword) {
-                document.getElementById("password-container").style.display = "none"; // Versteckt die Passwortabfrage
-                document.getElementById("protected-content").style.display = "flex"; // Zeigt den geschützten Inhalt an
+                const today = new Date().toISOString().split('T')[0];
+                localStorage.setItem("storedPassword", correctPassword);
+                localStorage.setItem("passwordDate", today);
+                showProtectedContent();
             } else {
                 alert("Falsches Passwort. Zugriff verweigert.");
             }
