@@ -21,8 +21,6 @@
             padding-top: 10px; /* Abstand zum oberen Rand */
             box-sizing: border-box;
         }
-
-        /* Passwortschutz-Container */
         #password-container {
             display: flex;
             flex-direction: column;
@@ -40,8 +38,6 @@
             width: 85%;
             /* height: 100vh; */
         }
-
-        /* Überschrift-Stil */
         h1 {
             font-size: 3.2em;
             font-weight: bold;
@@ -49,7 +45,6 @@
             text-align: center;
             display: block;
         }
-        /* Input-Stil */
         #password-input {
             padding: 10px;
             font-size: 1em;
@@ -58,15 +53,11 @@
             border-radius: 5px;
             border: 1px solid #cccccc;
         }
-
-        /* Container für Buttons */
         .button-container {
             display: flex;
             gap: 10px;
             margin-top: 10px;
         }
-
-        /* Buttons */
         #toggle-password, #submit-button {
             padding: 10px 15px;
             font-size: 1em;
@@ -76,12 +67,9 @@
             color: #ffffff;
             cursor: pointer;
         }
-
         #toggle-password:hover, #submit-button:hover {
             background-color: #777777;
         }
-
-        /* Überschrift nach der Anmeldung */
         #protected-content h2 {
             font-size: 1.5em;
             font-weight: normal;
@@ -92,16 +80,13 @@
             max-width: 200px; /* Breite passt sich der Überschrift an */
             display: block;
         }
-
-        /* Footer-Stil */
         footer {
-            position: absolute;
-            bottom: 10px;
+            position: fixed;
+            bottom: 0;
             font-size: 0.5em; /* Kleinere Schriftgröße */
-            color: #888888; /* Dunkleres Grau */
+            color: #aaaaaa; /* Dunkleres Grau */
         }
-        /* Stil für Text und Links innerhalb von geschütztem Inhalt */
-a {
+ a {
     color: #aaaaaa; /* Hellgrau */
     font-size: 0.9em; /* Kleinere Schriftgröße */
     text-align: left;
@@ -111,7 +96,6 @@ a {
     </style>
 </head>
 <body>
-    <!-- Passwortschutz-Container -->
     <div id="password-container">
         <h1>aSTEREOid</h1>
         <input type="password" id="password-input" placeholder="Passwort">
@@ -120,20 +104,15 @@ a {
             <button id="submit-button">Enter...</button>
         </div>
     </div>
-
-    <!-- Geschützter Inhalt, der zuerst versteckt ist -->
     <div id="protected-content" style="display: none; flex-direction: column; align-items: center;">
         <h1>aSTEREOid</h1>
         <h2>Live-Stream</h2>
-        
-        <!-- Eingebetteter Live-Stream-Player -->
         <iframe src="https://player.castr.com/live_119ad60093ad11ef90b68d1f022f306a" 
-                width="90%" style="aspect-ratio: 16/9; min-height: 340px;" 
+                width="90%" style="aspect-ratio: 16/9; min-height: 280px;" 
                 frameborder="0" scrolling="no" 
                 allow="autoplay" allowfullscreen 
                 webkitallowfullscreen mozallowfullscreen 
                 oallowfullscreen msallowfullscreen></iframe>
-        
         <div id="link-container" ><br>
         <p style="font-size: 0.8em;">Empfehlung vom Resident:<br>
             <a href="https://drive.google.com/file/d/16zwNXVXkDA3SNteo-_ZbW-Y2qFjSbQ0_/view?usp=drivesdk" target="_blank">
@@ -145,17 +124,15 @@ a {
         <br><br>aSTEREOid Videos:<br>
         ...</p>
         </div>
-        
         <footer>
-            &copy;2024 aSTEREOid - bester Club der Erde von EVE13 & daemon
+            <p style="text-align: justify;">Die Inhalte dieser Website sind ausschließlich für private Zwecke!
+            Weder jetzt noch in Zukunft werden öffentliche und/oder finanzielle Ziele angestrebt.
+            Url und gedownloadete Inhalte sind nicht für die Weitergabe gedacht. Die öffentliche Vorführung des Live-Streams ist untersagt. <br><br>
+            &copy;2024 aSTEREOid - bester Club der Erde von EVE13 & daemon</p>
         </footer>
     </div>
-
-    <!-- JavaScript für die Passwortüberprüfung und Passwortanzeige -->
     <script>
         let correctPassword = ""; // Variable zum Speichern des Passworts aus der JSON-Datei
-
-        // Passwort aus der JSON-Datei laden
         fetch(pString)
             .then(response => response.json())
             .then(data => {
@@ -165,31 +142,23 @@ a {
             .catch(error => {
                 console.error("Fehler beim Laden des Passworts:", error);
             });
-
-        // Funktion zum Überprüfen des gespeicherten Passworts und Datums im Local Storage
         function checkStoredPassword() {
             const storedPassword = localStorage.getItem("storedPassword");
             const storedDate = localStorage.getItem("passwordDate");
             const today = new Date().toISOString().split('T')[0]; // Heutiges Datum im Format YYYY-MM-DD
-
             if (storedPassword === correctPassword && storedDate === today) {
-                showProtectedContent(); // Passwort ist noch gültig, zeige geschützten Inhalt
+                showProtectedContent(); 
             } else {
-                localStorage.removeItem("storedPassword"); // Entferne alte Daten
+                localStorage.removeItem("storedPassword"); 
                 localStorage.removeItem("passwordDate");
             }
         }
-
-        // Funktion zum Anzeigen des geschützten Inhalts
         function showProtectedContent() {
             document.getElementById("password-container").style.display = "none";
             document.getElementById("protected-content").style.display = "flex";
         }
-
-        // Passwortüberprüfung und Speichern im Local Storage
         document.getElementById("submit-button").addEventListener("click", function() {
             const input = document.getElementById("password-input").value;
-
             if (input === correctPassword) {
                 const today = new Date().toISOString().split('T')[0];
                 localStorage.setItem("storedPassword", correctPassword);
@@ -199,12 +168,9 @@ a {
                 alert("Falsches Passwort. Zugriff verweigert.");
             }
         });
-
-        // Passwort anzeigen/ausblenden
         document.getElementById("toggle-password").addEventListener("click", function() {
             const passwordInput = document.getElementById("password-input");
             const toggleButton = document.getElementById("toggle-password");
-
             if (passwordInput.type === "password") {
                 passwordInput.type = "text";
                 toggleButton.textContent = "hide";
