@@ -30,7 +30,7 @@
 
         /* Überschrift-Stil */
         h1 {
-            font-size: 3em;
+            font-size: 3.2em;
             font-weight: bold;
             margin: 0;
             text-align: center;
@@ -92,10 +92,10 @@
     <!-- Passwortschutz-Container -->
     <div id="password-container">
         <h1>aSTEREOid</h1>
-        <input type="password" id="password-input" placeholder="Passwort eingeben">
+        <input type="password" id="password-input" placeholder="Passwort">
         <div class="button-container">
             <button id="toggle-password">show</button>
-            <button id="submit-button">Anmelden</button>
+            <button id="submit-button">Enter...</button>
         </div>
     </div>
 
@@ -110,12 +110,23 @@
 
     <!-- JavaScript für die Passwortüberprüfung und Passwortanzeige -->
     <script>
+        let correctPassword = ""; // Variable zum Speichern des Passworts aus der JSON-Datei
+
+        // Passwort aus der JSON-Datei laden
+        fetch("xp.json")
+            .then(response => response.json())
+            .then(data => {
+                correctPassword = data.password;
+            })
+            .catch(error => {
+                console.error("Fehler beim Laden des Passworts:", error);
+            });
+
         // Passwortüberprüfung
         document.getElementById("submit-button").addEventListener("click", function() {
-            const password = "me@aSTEREOid";
             const input = document.getElementById("password-input").value;
 
-            if (input === password) {
+            if (input === correctPassword) {
                 document.getElementById("password-container").style.display = "none"; // Versteckt die Passwortabfrage
                 document.getElementById("protected-content").style.display = "flex"; // Zeigt den geschützten Inhalt an
             } else {
