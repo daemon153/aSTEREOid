@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>aSTEREOid - Live-Stream</title>
+    <script>
+        const pString="xp.json";
+    </script>
     <style>
         /* Seitenstil */
         body {
@@ -101,8 +104,7 @@
 
     <!-- Geschützter Inhalt, der zuerst versteckt ist -->
     <div id="protected-content" style="display: none;">
-        <h1>aSTEREOid</h1>
-        <br>
+        <h1>aSTEREOid</h1><br><br>
         <h2>Live-Stream aus dem Club</h2>
         <footer>
             &copy;2024 aSTEREOid - bester Club der Erde von EVE13 & daemon
@@ -114,7 +116,7 @@
         let correctPassword = ""; // Variable zum Speichern des Passworts aus der JSON-Datei
 
         // Passwort aus der JSON-Datei laden
-        fetch("xp.json")
+        fetch(pString)
             .then(response => response.json())
             .then(data => {
                 correctPassword = data.password;
