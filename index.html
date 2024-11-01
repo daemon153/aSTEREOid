@@ -36,16 +36,6 @@
             text-align: center;
         }
 
-        h2 {
-            font-size: 1.5em;
-            font-weight: normal;
-            color: #cccccc; /* Leichtes Grau */
-            margin-top: 0.3em;
-            text-align: center;
-            width: 100%; /* Gleiche Breite wie h1 */
-            max-width: 200px; /* Setzt eine maximale Breite, die der Breite von h1 entspricht */
-        }
-
         /* Input-Stil */
         #password-input {
             padding: 10px;
@@ -56,21 +46,16 @@
             border: 1px solid #cccccc;
         }
 
-        /* Button für die Passwort-Anzeige */
-        #toggle-password {
+        /* Container für Buttons */
+        .button-container {
+            display: flex;
+            gap: 10px;
             margin-top: 10px;
-            padding: 5px 10px;
-            font-size: 0.9em;
-            border-radius: 5px;
-            border: none;
-            background-color: #555555;
-            color: #ffffff;
-            cursor: pointer;
         }
 
-        #submit-button {
-            margin-top: 10px;
-            padding: 10px 20px;
+        /* Buttons */
+        #toggle-password, #submit-button {
+            padding: 10px 15px;
             font-size: 1em;
             border-radius: 5px;
             border: none;
@@ -79,16 +64,27 @@
             cursor: pointer;
         }
 
-        #submit-button:hover, #toggle-password:hover {
+        #toggle-password:hover, #submit-button:hover {
             background-color: #777777;
+        }
+
+        /* Überschrift nach der Anmeldung */
+        #protected-content h2 {
+            font-size: 1.5em;
+            font-weight: normal;
+            color: #cccccc; /* Leichtes Grau */
+            margin-top: 0.3em;
+            text-align: center;
+            width: 100%;
+            max-width: 200px; /* Breite passt sich der Überschrift an */
         }
 
         /* Footer-Stil */
         footer {
             position: absolute;
             bottom: 10px;
-            font-size: 0.8em;
-            color: #888888; /* Dunkles Grau */
+            font-size: 0.7em; /* Kleinere Schriftgröße */
+            color: #666666; /* Dunkleres Grau */
         }
     </style>
 </head>
@@ -96,10 +92,11 @@
     <!-- Passwortschutz-Container -->
     <div id="password-container">
         <h1>aSTEREOid</h1>
-        <h2>Live-Stream aus dem Club</h2>
         <input type="password" id="password-input" placeholder="Passwort eingeben">
-        <button id="toggle-password">Passwort anzeigen</button>
-        <button id="submit-button">Anmelden</button>
+        <div class="button-container">
+            <button id="toggle-password">show</button>
+            <button id="submit-button">Anmelden</button>
+        </div>
     </div>
 
     <!-- Geschützter Inhalt, der zuerst versteckt ist -->
@@ -133,10 +130,10 @@
 
             if (passwordInput.type === "password") {
                 passwordInput.type = "text";
-                toggleButton.textContent = "Passwort verbergen";
+                toggleButton.textContent = "hide";
             } else {
                 passwordInput.type = "password";
-                toggleButton.textContent = "Passwort anzeigen";
+                toggleButton.textContent = "show";
             }
         });
     </script>
