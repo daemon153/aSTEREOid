@@ -77,13 +77,14 @@
             margin-top: 0.3em;
             text-align: center;
             width: 100%;
-            max-width: 200px; /* Breite passt sich der Überschrift an */
+            max-width: 300px; /* Breite passt sich der Überschrift an */
             display: block;
         }
         footer {
             width: 80%;
+            max-width: 300px;
             position: fixed;
-            bottom: 0;
+            bottom: 10;
             text-align: justify;
             flex-direction: column;
             font-size: 0.5em; /* Kleinere Schriftgröße */
@@ -127,17 +128,15 @@
         <br><br>aSTEREOid Videos:<br>
         ...</p>
         </div>
-        <footer>
-        /* <div width="80%" style="flex-direction: column; align-items: center;"> */               
-            <p style="text-align: justify;">Die Inhalte dieser Website sind ausschließlich für private Zwecke!
+        <footer width="80%" style="flex-direction: column; text-align: justify;">
+            <p>Die Inhalte dieser Website sind ausschließlich für private Zwecke!
             Weder jetzt noch in Zukunft werden öffentliche und/oder finanzielle Ziele angestrebt.
             Url und gedownloadete Inhalte sind nicht für die Weitergabe gedacht. Die öffentliche Vorführung des Live-Streams ist untersagt. <br><br>
             &copy;2024 aSTEREOid - bester Club der Erde von EVE13 & daemon</p> 
-        /* </div> */
         </footer>
     </div>
     <script>
-        let correctPassword = ""; // Variable zum Speichern des Passworts aus der JSON-Datei
+        let correctPassword = "";
         fetch(pString)
             .then(response => response.json())
             .then(data => {
@@ -170,7 +169,7 @@
                 localStorage.setItem("passwordDate", today);
                 showProtectedContent();
             } else {
-                alert("Falsches Passwort. Zugriff verweigert.");
+                alert("Falsches Passwort. Zugang verwehrt!");
             }
         });
         document.getElementById("toggle-password").addEventListener("click", function() {
@@ -178,10 +177,10 @@
             const toggleButton = document.getElementById("toggle-password");
             if (passwordInput.type === "password") {
                 passwordInput.type = "text";
-                toggleButton.textContent = "hide";
+                toggleButton.textContent = "•••|";
             } else {
                 passwordInput.type = "password";
-                toggleButton.textContent = "show";
+                toggleButton.textContent = "👁";
             }
         });
     </script>
