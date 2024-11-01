@@ -1,17 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page with JavaScript</title>
+    <title>aSTEREOid - Live Stream</title>
+    <style>
+        /* Seitenstil */
+        body {
+            background-color: #2F2F2F; /* Anthrazit */
+            color: #FFFFFF; /* Weiß für den Text */
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Überschrift-Stil */
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            font-weight: normal;
+            color: #cccccc; /* Leichtes Grau */
+            margin-top: 0.3em;
+        }
+
+        /* Footer-Stil */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.8em;
+            color: #888888; /* Dunkles Grau */
+        }
+    </style>
 </head>
 <body>
-    <h1>Willkommen auf meiner GitHub Page</h1>
-    <button onclick="greet()">Sag Hallo</button>
+    <!-- Titel und Beschreibung -->
+    <h1>aSTEREOid</h1>
+    <h2>Live Stream from the Club</h2>
+
+    <!-- Footer -->
+    <footer>
+        &copy;2024 aSTEREOid - worlds best private Club hosted by EVE13 & daemon
+    </footer>
+
+    <!-- JavaScript-Aktion beim Laden der Seite -->
     <script>
-        function greet() {
-            alert("Hallo von GitHub Pages!");
-        }
+        // Pop-up Begrüßung beim Laden der Seite
+        window.onload = function() {
+            alert("Willkommen im exklusivsten Club der Welt: aSTEREOid!");
+        };
     </script>
 </body>
 </html>
