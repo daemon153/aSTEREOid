@@ -56,6 +56,18 @@
             border: 1px solid #cccccc;
         }
 
+        /* Button für die Passwort-Anzeige */
+        #toggle-password {
+            margin-top: 10px;
+            padding: 5px 10px;
+            font-size: 0.9em;
+            border-radius: 5px;
+            border: none;
+            background-color: #555555;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
         #submit-button {
             margin-top: 10px;
             padding: 10px 20px;
@@ -67,7 +79,7 @@
             cursor: pointer;
         }
 
-        #submit-button:hover {
+        #submit-button:hover, #toggle-password:hover {
             background-color: #777777;
         }
 
@@ -84,21 +96,24 @@
     <!-- Passwortschutz-Container -->
     <div id="password-container">
         <h1>aSTEREOid</h1>
+        <h2>Live-Stream aus dem Club</h2>
         <input type="password" id="password-input" placeholder="Passwort eingeben">
+        <button id="toggle-password">Passwort anzeigen</button>
         <button id="submit-button">Anmelden</button>
     </div>
 
     <!-- Geschützter Inhalt, der zuerst versteckt ist -->
     <div id="protected-content" style="display: none;">
-        <h1>aSTEREOid</h1><br>
-        <h2 style="width: inherit;">Live-Stream aus dem Club</h2>
+        <h1>aSTEREOid</h1>
+        <h2>Live-Stream aus dem Club</h2>
         <footer>
             &copy;2024 aSTEREOid - Der beste private Club der Welt, gehostet von EVE13 & daemon
         </footer>
     </div>
 
-    <!-- JavaScript für die Passwortüberprüfung -->
+    <!-- JavaScript für die Passwortüberprüfung und Passwortanzeige -->
     <script>
+        // Passwortüberprüfung
         document.getElementById("submit-button").addEventListener("click", function() {
             const password = "me@aSTEREOid";
             const input = document.getElementById("password-input").value;
@@ -108,6 +123,20 @@
                 document.getElementById("protected-content").style.display = "flex"; // Zeigt den geschützten Inhalt an
             } else {
                 alert("Falsches Passwort. Zugriff verweigert.");
+            }
+        });
+
+        // Passwort anzeigen/ausblenden
+        document.getElementById("toggle-password").addEventListener("click", function() {
+            const passwordInput = document.getElementById("password-input");
+            const toggleButton = document.getElementById("toggle-password");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleButton.textContent = "Passwort verbergen";
+            } else {
+                passwordInput.type = "password";
+                toggleButton.textContent = "Passwort anzeigen";
             }
         });
     </script>
