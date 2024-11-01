@@ -17,11 +17,12 @@
             height: 100vh;
             padding-top: 20px; /* Abstand zum oberen Rand */
             box-sizing: border-box;
+            display: none; /* Versteckt den Inhalt bis zur Passwortabfrage */
         }
 
         /* Überschrift-Stil */
         h1 {
-            font-size: 3em;
+            font-size: 3.2em;
             font-weight: bold;
             margin: 0;
         }
@@ -37,8 +38,8 @@
         footer {
             position: absolute;
             bottom: 10px;
-            font-size: 0.6em;
-            color: #888888; /* Dunkles Grau */
+            font-size: 0.8em;
+            color: #666666; /* Dunkles Grau */
         }
     </style>
 </head>
@@ -49,15 +50,21 @@
 
     <!-- Footer -->
     <footer>
-        &copy;2024 aSTEREOid - Der beste private Club der Welt, gehostet von EVE13 & daemon
+        &copy;2024 aSTEREOid - bester Club der Welt von EVE13 & daemon
     </footer>
 
-    <!-- JavaScript-Aktion beim Laden der Seite -->
+    <!-- JavaScript für die Passwortabfrage -->
     <script>
-        // Pop-up Begrüßung beim Laden der Seite
-        // window.onload = function() {
-        //    alert("Willkommen im exklusivsten Club der Welt: aSTEREOid!");
-        // };
+        // Passwort-Abfrage beim Laden der Seite
+        const password = "me@aSTEREOid";
+        const userPassword = prompt("Bitte Passwort eingeben:");
+
+        if (userPassword === password) {
+            document.body.style.display = "flex"; // Zeigt den Inhalt an, wenn das Passwort korrekt ist
+        } else {
+            alert("Falsches Passwort. Zugriff verweigert.");
+            window.location.href = "https://google.com"; // Leitet den Benutzer bei falschem Passwort weiter
+        }
     </script>
 </body>
 </html>
