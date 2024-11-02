@@ -31,10 +31,10 @@
 
 /* Farben für die Quadrate */
 .color-square:nth-child(1) { background-color: #2f2f2f; } /* Anthrazit */
-.color-square:nth-child(2) { background-color: #CC5500; } /* Dunkles Orange */
-.color-square:nth-child(3) { background-color: #005F6A; } /* Petrol */
-.color-square:nth-child(4) { background-color: #8B0000; } /* Dunkles Tomatenrot */
-.color-square:nth-child(5) { background-color: #556B2F; } /* Gebrochenes Moorgrün */
+.color-square:nth-child(2) { background-color: #aa3300; } /* Dunkles Orange */
+.color-square:nth-child(3) { background-color: #003d48; } /* Petrol */
+.color-square:nth-child(4) { background-color: #690000; } /* Dunkles Tomatenrot */
+.color-square:nth-child(5) { background-color: #33490d; } /* Gebrochenes Moorgrün */
 
         body {
             background-color: #2F2F2F; 
@@ -43,7 +43,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: top;
+            justify-content: center;
             margin: 0;
             height: 100vh;
             padding-top: 10px;
@@ -66,9 +66,9 @@
             align-items: left;
             justify-content: left;
             width: 85%;
-            height: 100vh;
         }
         h1 {
+            color: #ffffff;
             font-size: 3.2em;
             font-weight: bold;
             margin: 0;
@@ -111,7 +111,7 @@
             display: block;
         }
         .footer {
-            /* z-index: 0; */
+            z-index: -1; 
             width: 90%;
             max-width: 400px;
             position: sticky;
@@ -129,11 +129,8 @@
         .footer.visible {
             opacity: 1; 
         }
-        .footer-trigger {
-            height: 1px; /* Klein und unsichtbar */
-        }
         a {
-            color: #aaaaaa; /* Hellgrau */
+            color: #cccccc; /* Hellgrau */
             font-size: 0.9em; /* Kleinere Schriftgröße */
             text-align: left;
             font-weight: normal;
@@ -163,10 +160,10 @@
                 oallowfullscreen msallowfullscreen></iframe>
         <div class="color-selector">
     <div class="color-square" data-color="#2f2f2f"></div> <!-- Anthrazit -->
-    <div class="color-square" data-color="#CC5500"></div> <!-- Dunkles Orange -->
-    <div class="color-square" data-color="#005F6A"></div> <!-- Petrol -->
-    <div class="color-square" data-color="#8B0000"></div> <!-- Dunkles Tomatenrot -->
-    <div class="color-square" data-color="#556B2F"></div> <!-- Gebrochenes Moorgrün -->
+    <div class="color-square" data-color="#aa3300"></div> <!-- Dunkles Orange -->
+    <div class="color-square" data-color="#003d48"></div> <!-- Petrol -->
+    <div class="color-square" data-color="#690000"></div> <!-- Dunkles Tomatenrot -->
+    <div class="color-square" data-color="#33490d"></div> <!-- Gebrochenes Moorgrün -->
         </div>
         <div id="link-container" >
         <p style="font-size: 0.8em;">Resident's secret tip:<br>
@@ -184,7 +181,7 @@
         <a href="https://drive.google.com/file/d/17JYV4jDJLZi6cc1kGzlt5BOoj01She9O/view?usp=drivesdk" target="_blank">09.10.21 - Disco II</a><br>
         <a href="https://drive.google.com/file/d/170O3HwQE3VE0d1gPTx38VLlfUq2JEsp-/view?usp=drivesdk" target="_blank">03.10.21 - Disco I</a><br><br>
         aSTEREOid Pix: <br><a href="https://drive.google.com/drive/folders/1gjBY38rBmM5OEXIloN3ejfGJ5OifSmYm" target="_blank">…Club-Bilder</a></p>
-        <div class="footer-trigger"></div></div>
+        </div>
         <footer class="footer">
             <p>Die Inhalte dieser Website sind ausschließlich für private Zwecke.
             Weder jetzt noch in Zukunft werden öffentliche und/oder finanzielle Ziele angestrebt.
