@@ -80,7 +80,7 @@
             max-width: 300px; /* Breite passt sich der Überschrift an */
             display: block;
         }
-        footer {
+        .footer {
             z-index: 0;
             width: 90%;
             max-width: 400px;
@@ -90,8 +90,13 @@
             text-align: justify;
             display: flex;
             flex-direction: column;
-            font-size: 0.5em; /* Kleinere Schriftgröße */
-            color: #777777; /* Dunkleres Grau */
+            font-size: 0.5em; 
+            color: #666666; 
+            transition: transform 0.3s ease; /* Übergangseffekt */
+        }
+        /* Klasse zum Ausblenden */
+        .footer.hide {
+            transform: translateY(100%); /* Schiebt den Footer nach unten aus dem sichtbaren Bereich */
         }
         a {
             color: #aaaaaa; /* Hellgrau */
@@ -139,7 +144,7 @@
         <a href="https://drive.google.com/file/d/170O3HwQE3VE0d1gPTx38VLlfUq2JEsp-/view?usp=drivesdk" target="_blank">03.10.21 - Disco I</a><br><br>
         aSTEREOid Pix: <a href="https://drive.google.com/drive/folders/1gjBY38rBmM5OEXIloN3ejfGJ5OifSmYm" target="_blank">Club-Bilder…</a></p>
         </div>
-        <footer>
+        <footer class="footer">
             <p>Die Inhalte dieser Website sind ausschließlich für private Zwecke.
             Weder jetzt noch in Zukunft werden öffentliche und/oder finanzielle Ziele angestrebt.
             Url und/oder gedownloadete Inhalte sind nicht für die Weitergabe vorgesehen. Die 
@@ -195,6 +200,19 @@
                 passwordInput.type = "password";
                 toggleButton.textContent = "👁";
             }
+        });
+        let lastScrollTop = 0;
+        const footer = document.querySelector('.footer');
+        window.addEventListener('scroll', () => {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+        // Wenn nach unten gescrollt wird, Footer ausblenden
+        footer.classList.add('hide');
+        } else {
+        // Wenn nach oben gescrollt wird, Footer einblenden
+        footer.classList.remove('hide');
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Für Mobile oder an den Anfang der Seite zurück
         });
     </script>
 </body>
