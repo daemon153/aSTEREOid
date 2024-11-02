@@ -15,9 +15,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             margin: 0;
             height: 100vh;
-            padding-top: 15px;
+            padding-top: 10px;
             box-sizing: border-box;
         }
         #password-container {
@@ -84,7 +85,7 @@
             z-index: 0;
             width: 90%;
             max-width: 400px;
-            position: fixed;
+            position: sticky;
             bottom: 0;
             padding: 10px;
             padding-bottom: 10px;
@@ -93,11 +94,11 @@
             flex-direction: column;
             font-size: 0.5em; 
             color: #666666; 
+            opacity: 0;
             transition: opacity 0.3s ease; /* Übergangseffekt */
-            opacity: 1;
         }
-        .footer.hide {
-            opacity: 0; 
+        .footer.visible {
+            opacity: 1; 
         }
         .footer-trigger {
             height: 1px; /* Klein und unsichtbar */
@@ -206,22 +207,19 @@
             }
         });
         
- const footer = document.querySelector('.footer.hide');
-let isFooterVisible = false; // Der Footer ist beim Seitenaufruf sichtbar
+ const footer = document.querySelector('.footer');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            footer.classList.add('visible');
+        } else {
+            footer.classList.remove('visible');
+        }
+    });
+}, { threshold: 1.0 });
 
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop === 0) {
-        // Wenn der Benutzer ganz oben ist, Footer einblenden
-        footer.classList.add('hide');
-        isFooterVisible = false;
-    } else if (isFooterVisible) {
-        // Wenn der Benutzer scrollt, Footer ausblenden
-        footer.classList.remove('hide');
-        isFooterVisible = true;
-    }
-});       
+observer.observe(document.querySelector('.bottom-of-page-marker'));
+        
     </script>
 </body>
 </html>
