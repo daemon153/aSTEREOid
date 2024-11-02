@@ -92,11 +92,13 @@
             flex-direction: column;
             font-size: 0.5em; 
             color: #666666; 
-            transition: transform 0.2s ease; /* Übergangseffekt */
+            transition: opacity 0.3s ease; /* Übergangseffekt */
         }
-        /* Klasse zum Ausblenden */
         .footer.hide {
-            transform: translateY(100%); /* Schiebt den Footer nach unten aus dem sichtbaren Bereich */
+            opacity: 0; 
+        }
+        .footer-trigger {
+            height: 1px; /* Klein und unsichtbar */
         }
         a {
             color: #aaaaaa; /* Hellgrau */
@@ -143,14 +145,14 @@
         <a href="https://drive.google.com/file/d/17JYV4jDJLZi6cc1kGzlt5BOoj01She9O/view?usp=drivesdk" target="_blank">09.10.21 - Disco II</a><br>
         <a href="https://drive.google.com/file/d/170O3HwQE3VE0d1gPTx38VLlfUq2JEsp-/view?usp=drivesdk" target="_blank">03.10.21 - Disco I</a><br><br>
         aSTEREOid Pix: <br><a href="https://drive.google.com/drive/folders/1gjBY38rBmM5OEXIloN3ejfGJ5OifSmYm" target="_blank">…Club-Bilder</a></p>
-        </div>
+        <div class="footer-trigger"></div></div>
         <footer class="footer">
             <p>Die Inhalte dieser Website sind ausschließlich für private Zwecke.
             Weder jetzt noch in Zukunft werden öffentliche und/oder finanzielle Ziele angestrebt.
             Url und/oder gedownloadete Inhalte sind nicht für die Weitergabe vorgesehen. Die 
             öffentliche Vorführung des Live-Streams ist untersagt. "aSTEREOid" übernimmt keine 
             Verantwortung für jedwede Weiterverwendung aller Inhalte durch dritte.</p>
-            &copy;2024  aSTEREOid  -  best Club on Earth established 2019 by EVE13 & daemon  -  finest Disco, House, Electro & Techno
+            &copy;2024 aSTEREOid - Club #1 on Earth est. 2019 by EVE13 & daemon - finest Disco, House, Electro & Techno
         </footer>
     </div>
     <script>
@@ -201,39 +203,26 @@
                 toggleButton.textContent = "👁";
             }
         });
-   let lastScrollTop = 0;
-const footer = document.querySelector('.footer');
+        
+   const footer = document.querySelector('.footer');
+const trigger = document.querySelector('.footer-trigger');
 
-// Funktion zur Steuerung der Sichtbarkeit des Footers
-function handleFooterVisibility() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop + 10) {
-        // Nach unten gescrollt -> Footer ausblenden
-        footer.classList.add('hide');
-    } else if (scrollTop < lastScrollTop - 10) {
-        // Nach oben gescrollt -> Footer einblenden
-        footer.classList.remove('hide');
-    }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Fix für Mobile oder ganz oben auf der Seite
-}
-
-// Throttle-Funktion, um die Anzahl der Funktionsaufrufe zu reduzieren
-function throttle(func, delay) {
-    let lastCall = 0;
-    return function(...args) {
-        const now = new Date().getTime();
-        if (now - lastCall < delay) {
-            return;
+// Erzeuge einen Intersection Observer
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Wenn der Trigger den Footer "berührt", dann blende den Footer aus
+            footer.classList.add('hide');
+        } else {
+            // Wenn der Trigger nicht mehr sichtbar ist, blende den Footer wieder ein
+            footer.classList.remove('hide');
         }
-        lastCall = now;
-        return func(...args);
-    };
-}
+    });
+}, { threshold: 0.1 }); // Der Trigger muss nur minimal sichtbar sein
 
-// Scroll-Event mit Throttle
-window.addEventListener('scroll', throttle(handleFooterVisibility, 100));
+// Den Observer auf den Trigger anwenden
+observer.observe(trigger);
+        
     </script>
 </body>
 </html>
