@@ -206,25 +206,22 @@
             }
         });
         
-   const footer = document.querySelector('.footer');
-const trigger = document.querySelector('.footer-trigger');
+ const footer = document.querySelector('.footer');
+let isFooterVisible = true; // Der Footer ist beim Seitenaufruf sichtbar
 
-// Erzeuge einen Intersection Observer
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Wenn der Trigger den Footer "berührt", dann blende den Footer aus
-            footer.classList.add('hide');
-        } else {
-            // Wenn der Trigger nicht mehr sichtbar ist, blende den Footer wieder ein
-            footer.classList.remove('hide');
-        }
-    });
-}, { threshold: 0.1 }); // Der Trigger muss nur minimal sichtbar sein
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-// Den Observer auf den Trigger anwenden
-observer.observe(trigger);
-        
+    if (scrollTop === 0) {
+        // Wenn der Benutzer ganz oben ist, Footer einblenden
+        footer.classList.remove('hide');
+        isFooterVisible = true;
+    } else if (isFooterVisible) {
+        // Wenn der Benutzer scrollt, Footer ausblenden
+        footer.classList.add('hide');
+        isFooterVisible = false;
+    }
+});       
     </script>
 </body>
 </html>
