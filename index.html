@@ -31,10 +31,10 @@
 
 /* Farben für die Quadrate */
 .color-square:nth-child(1) { background-color: #2f2f2f; } /* Anthrazit */
-.color-square:nth-child(2) { background-color: #aa3300; } /* Dunkles Orange */
+.color-square:nth-child(2) { background-color: #992200; } /* Dunkles Orange */
 .color-square:nth-child(3) { background-color: #003d48; } /* Petrol */
-.color-square:nth-child(4) { background-color: #690000; } /* Dunkles Tomatenrot */
-.color-square:nth-child(5) { background-color: #33490d; } /* Gebrochenes Moorgrün */
+.color-square:nth-child(4) { background-color: #360000; } /* Dunkles Tomatenrot */
+.color-square:nth-child(5) { background-color: #11270b; } /* Gebrochenes Moorgrün */
 
         body {
             background-color: #2F2F2F; 
@@ -112,19 +112,18 @@
         }
         .footer {
             z-index: -1; 
-            width: 90%;
+            width: 95%;
             max-width: 400px;
-            position: fixed;
+            position: absolute;
             bottom: 0;
             padding: 10px;
-            padding-bottom: 10px;
             text-align: justify;
             display: flex;
             flex-direction: column;
             font-size: 0.5em; 
-            color: #666666; 
-          /*  opacity: 0; */
-            transition: opacity 0.3s ease; /* Übergangseffekt */
+            color: #777777; 
+          /*  opacity: 0; 
+            transition: opacity 0.3s ease;  Übergangseffekt */
         }
         .footer.visible {
             opacity: 1; 
@@ -160,10 +159,10 @@
                 oallowfullscreen msallowfullscreen></iframe>
         <div class="color-selector">
     <div class="color-square" data-color="#2f2f2f"></div> <!-- Anthrazit -->
-    <div class="color-square" data-color="#aa3300"></div> <!-- Dunkles Orange -->
+    <div class="color-square" data-color="#992200"></div> <!-- Dunkles Orange -->
     <div class="color-square" data-color="#003d48"></div> <!-- Petrol -->
-    <div class="color-square" data-color="#690000"></div> <!-- Dunkles Tomatenrot -->
-    <div class="color-square" data-color="#33490d"></div> <!-- Gebrochenes Moorgrün -->
+    <div class="color-square" data-color="#360000"></div> <!-- Dunkles Tomatenrot -->
+    <div class="color-square" data-color="#11270b"></div> <!-- Gebrochenes Moorgrün -->
         </div>
         <div id="link-container" >
         <p style="font-size: 0.7em;">Resident's secret tip:<br>
@@ -241,7 +240,6 @@
         });
         // Wähle alle Farbquadrate
 const colorSquares = document.querySelectorAll('.color-square');
-
 // Füge jedem Quadrat ein Klick-Event hinzu
 colorSquares.forEach(square => {
     square.addEventListener('click', () => {
@@ -249,19 +247,6 @@ colorSquares.forEach(square => {
         document.body.style.backgroundColor = selectedColor;
     });
 });
- const footer = document.querySelector('.footer');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            footer.classList.add('visible');
-        } else {
-            footer.classList.remove('visible');
-        }
-    });
-}, { threshold: 1.0 });
-
-observer.observe(document.querySelector('.bottom-of-page-marker'));
-        
     </script>
 </body>
 </html>
