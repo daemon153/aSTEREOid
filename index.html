@@ -8,6 +8,33 @@
         const pString="xp.json";
     </script>
     <style>
+        /* Haupt-Container für die Farbauswahl */
+.color-selector {
+    display: flex;
+    justify-content: center; /* Zentriert die Quadrate */
+    gap: 5px; /* Abstand zwischen den Quadraten */
+    margin-top: 20px; /* Optionaler Abstand nach oben */
+}
+
+/* Einzelne Farbquadrate */
+.color-square {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease; /* Leichter Hover-Effekt */
+}
+
+.color-square:hover {
+    transform: scale(1.1); /* Vergrößerung beim Hover */
+}
+
+/* Farben für die Quadrate */
+.color-square:nth-child(1) { background-color: #2f2f2f; } /* Anthrazit */
+.color-square:nth-child(2) { background-color: #CC5500; } /* Dunkles Orange */
+.color-square:nth-child(3) { background-color: #005F6A; } /* Petrol */
+.color-square:nth-child(4) { background-color: #8B0000; } /* Dunkles Tomatenrot */
+.color-square:nth-child(5) { background-color: #556B2F; } /* Gebrochenes Moorgrün */
+
         body {
             background-color: #2F2F2F; 
             color: #FFFFFF;
@@ -20,6 +47,7 @@
             height: 100vh;
             padding-top: 10px;
             box-sizing: border-box;
+            transition: background-color 0.5s ease;
         }
         #password-container {
             display: flex;
@@ -132,6 +160,13 @@
                 allow="autoplay" allowfullscreen 
                 webkitallowfullscreen mozallowfullscreen 
                 oallowfullscreen msallowfullscreen></iframe>
+        <div class="color-selector">
+    <div class="color-square" data-color="#2f2f2f"></div> <!-- Anthrazit -->
+    <div class="color-square" data-color="#CC5500"></div> <!-- Dunkles Orange -->
+    <div class="color-square" data-color="#005F6A"></div> <!-- Petrol -->
+    <div class="color-square" data-color="#8B0000"></div> <!-- Dunkles Tomatenrot -->
+    <div class="color-square" data-color="#556B2F"></div> <!-- Gebrochenes Moorgrün -->
+        </div>
         <div id="link-container" >
         <p style="font-size: 0.8em;">Resident's secret tip:<br>
             <a href="https://drive.google.com/file/d/16zwNXVXkDA3SNteo-_ZbW-Y2qFjSbQ0_/view?usp=drivesdk" target="_blank">
@@ -206,7 +241,16 @@
                 toggleButton.textContent = "👁";
             }
         });
-        
+        // Wähle alle Farbquadrate
+const colorSquares = document.querySelectorAll('.color-square');
+
+// Füge jedem Quadrat ein Klick-Event hinzu
+colorSquares.forEach(square => {
+    square.addEventListener('click', () => {
+        const selectedColor = square.getAttribute('data-color');
+        document.body.style.backgroundColor = selectedColor;
+    });
+});
  const footer = document.querySelector('.footer');
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
