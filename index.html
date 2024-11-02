@@ -10,6 +10,7 @@
     <style>
         /* Haupt-Container für die Farbauswahl */
 .color-selector {
+    z-index: 2;
     display: flex;
     justify-content: right; /* Zentriert die Quadrate */
     gap: 5px; /* Abstand zwischen den Quadraten */
@@ -110,7 +111,7 @@
             display: block;
         }
         .footer {
-            z-index: 0;
+            /* z-index: 0; */
             width: 90%;
             max-width: 400px;
             position: sticky;
