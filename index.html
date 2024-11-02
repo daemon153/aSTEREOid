@@ -202,18 +202,41 @@
             }
         });
         let lastScrollTop = 0;
-        const footer = document.querySelector('.footer');
-        window.addEventListener('scroll', () => {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
-        // Wenn nach unten gescrollt wird, Footer ausblenden
+let isScrollingDown = false;
+const footer = document.querySelector('.footer');
+
+// Funktion für das Hinzufügen oder Entfernen der "hide" Klasse
+function handleFooterVisibility() {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop + 10) {
+        // Nur ausblenden, wenn nach unten gescrollt wird und der Scrollabstand signifikant ist
         footer.classList.add('hide');
-        } else {
-        // Wenn nach oben gescrollt wird, Footer einblenden
+        isScrollingDown = true;
+    } else if (scrollTop < lastScrollTop - 10 && isScrollingDown) {
+        // Nur einblenden, wenn signifikant nach oben gescrollt wird und vorher nach unten gescrollt wurde
         footer.classList.remove('hide');
+        isScrollingDown = false;
+    }
+    
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Fix für Mobile oder ganz oben auf der Seite
+}
+
+// Throttle-Funktion, um die Anzahl der Funktionsaufrufe zu reduzieren
+function throttle(func, delay) {
+    let lastCall = 0;
+    return function(...args) {
+        const now = new Date().getTime();
+        if (now - lastCall < delay) {
+            return;
         }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Für Mobile oder an den Anfang der Seite zurück
-        });
+        lastCall = now;
+        return func(...args);
+    };
+}
+
+// Scroll-Event mit Throttle
+window.addEventListener('scroll', throttle(handleFooterVisibility, 100));
     </script>
 </body>
 </html>
