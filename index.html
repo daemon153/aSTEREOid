@@ -214,12 +214,12 @@ window.addEventListener('scroll', () => {
 
     if (scrollTop === 0) {
         // Wenn der Benutzer ganz oben ist, Footer einblenden
-        footer.classList.remove('hide');
-        isFooterVisible = true;
-    } else if (isFooterVisible) {
-        // Wenn der Benutzer scrollt, Footer ausblenden
         footer.classList.add('hide');
         isFooterVisible = false;
+    } else if (isFooterVisible) {
+        // Wenn der Benutzer scrollt, Footer ausblenden
+        footer.classList.remove('hide');
+        isFooterVisible = true;
     }
 });       
     </script>
