@@ -29,6 +29,7 @@
             height: 100vh;
         }
         #link-container {
+            z-index: 1;
             font-size: 0.8em;
             font-weight: bold;
             display: flex;
@@ -81,7 +82,7 @@
             display: block;
         }
         .footer {
-            z-index: 0;
+            z-index: 1;
             width: 90%;
             max-width: 400px;
             position: fixed;
@@ -92,7 +93,7 @@
             flex-direction: column;
             font-size: 0.5em; 
             color: #666666; 
-            transition: opacity 0.3s ease; /* Übergangseffekt */
+            transition: opacity 0.4s ease; /* Übergangseffekt */
         }
         .footer.hide {
             opacity: 0; 
