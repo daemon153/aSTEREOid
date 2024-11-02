@@ -16,7 +16,13 @@
     gap: 5px; /* Abstand zwischen den Quadraten */
     margin-top: 5px; /* Optionaler Abstand nach oben */
 }
-
+.overlay-image {
+    position: absolute;
+    top: 0; /* Platziert das Bild oben im Container */
+    right: 0; /* Platziert das Bild am rechten Rand */
+    width: auto; /* Breite des Bildes anpassen */
+    height: auto; /* Höhe wird entsprechend der Breite skaliert */
+}
 /* Einzelne Farbquadrate */
 .color-square {
     width: 20px;
@@ -57,6 +63,7 @@
             height: 100vh;
         }
         #link-container {
+            position: relative;
             z-index: 1;
             font-size: 0.9em;
             font-weight: bold;
@@ -159,7 +166,7 @@
     <div class="color-square" data-color="#11270b"></div> <!-- Gebrochenes Moorgrün -->
         </div>
         <div id="link-container" >
-        <img source="new.png">
+        <img source="new.png" class="overlay-image">
         <p style="font-size: 0.7em;">Resident's Secret Tip:<br>
             <a href="https://drive.google.com/file/d/16zwNXVXkDA3SNteo-_ZbW-Y2qFjSbQ0_/view?usp=drivesdk" target="_blank">
     20.10.2024 - FU(N)CK (M4A)
