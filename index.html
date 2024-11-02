@@ -201,24 +201,21 @@
                 toggleButton.textContent = "👁";
             }
         });
-        let lastScrollTop = 0;
-let isScrollingDown = false;
+   let lastScrollTop = 0;
 const footer = document.querySelector('.footer');
 
-// Funktion für das Hinzufügen oder Entfernen der "hide" Klasse
+// Funktion zur Steuerung der Sichtbarkeit des Footers
 function handleFooterVisibility() {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > lastScrollTop + 10) {
-        // Nur ausblenden, wenn nach unten gescrollt wird und der Scrollabstand signifikant ist
+        // Nach unten gescrollt -> Footer ausblenden
         footer.classList.add('hide');
-        isScrollingDown = true;
-    } else if (scrollTop < lastScrollTop - 10 && isScrollingDown) {
-        // Nur einblenden, wenn signifikant nach oben gescrollt wird und vorher nach unten gescrollt wurde
+    } else if (scrollTop < lastScrollTop - 10) {
+        // Nach oben gescrollt -> Footer einblenden
         footer.classList.remove('hide');
-        isScrollingDown = false;
     }
-    
+
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Fix für Mobile oder ganz oben auf der Seite
 }
 
