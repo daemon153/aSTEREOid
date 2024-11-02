@@ -239,14 +239,30 @@
                 toggleButton.textContent = "👁";
             }
         });
-        // Wähle alle Farbquadrate
+        // Wähle alle Farbquadrate aus
 const colorSquares = document.querySelectorAll('.color-square');
+
 // Füge jedem Quadrat ein Klick-Event hinzu
 colorSquares.forEach(square => {
     square.addEventListener('click', () => {
         const selectedColor = square.getAttribute('data-color');
+        
+        // Setze die Hintergrundfarbe der Seite
         document.body.style.backgroundColor = selectedColor;
+        
+        // Speichere die Farbe im Local Storage
+        localStorage.setItem('backgroundColor', selectedColor);
     });
+});
+
+// Prüfe beim Laden der Seite, ob eine Hintergrundfarbe im Local Storage gespeichert ist
+document.addEventListener('DOMContentLoaded', () => {
+    const savedColor = localStorage.getItem('backgroundColor');
+    
+    // Wenn eine Farbe gespeichert ist, setze sie als Hintergrundfarbe der Seite
+    if (savedColor) {
+        document.body.style.backgroundColor = savedColor;
+    }
 });
     </script>
 </body>
