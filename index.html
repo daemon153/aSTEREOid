@@ -5,21 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>aSTEREOid - Streams & Sets</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        const pString="xp.json";
-    </script>
-    <!-- JavaScript-Dateien laden -->
-<script src="script.js"></script>
-<script>
-    // Lädt den Inhalt von menu.html in den Platzhalter
-    fetch('menue.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('menue-placeholder').innerHTML = data;
-        });
-</script>
-    <style>
-    </style>
 </head>
 <body>
     <div id="password-container">
@@ -49,7 +34,18 @@
         </div>
         <!-- Platzhalter, in den das Menü geladen wird -->
 <div id="menue-placeholder"></div>
-        
+        <!-- JavaScript-Dateien laden -->
+<script src="script.js"></script>
+<script>
+    // Lädt den Inhalt von menu.html in den Platzhalter
+    fetch('menue.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('menue-placeholder').innerHTML = data;
+        });
+    const pString="xp.json";
+</script>
+    
         <div class="footer">
             Die Inhalte dieser Website sind ausschließlich für private Zwecke.
             Weder jetzt noch in Zukunft werden öffentliche und/oder finanzielle Ziele angestrebt.
