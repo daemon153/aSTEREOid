@@ -52,13 +52,19 @@
     height: auto; /* Höhe wird entsprechend der Breite skaliert */
     padding-top: 20px;
 }
-.logo {
-    position: relative;
-    top: 0;
-    width: 50%;
-    height: auto;
-    padding-top: 20px;
+.h-container {
+    display: flex;
+    flex-direction: column; /* Stellt sicher, dass das Bild und der Text untereinander stehen */
+    align-items: center; /* Zentriert das Bild und den Text horizontal */
+    justify-content: center; /* Zentriert den Inhalt vertikal */
+    text-align: center; /* Zentriert den Text im Container */
+    padding: 20px;
 }
+.logo {
+    width: 50%; /* Setzt die Breite auf 75% des Containers */
+    height: auto; /* Beibehaltung des Seitenverhältnisses */
+}
+
 /* Einzelne Farbquadrate */
 .color-square {
     width: 20px;
@@ -106,14 +112,6 @@
             flex-direction: column;
             justify-content: left; 
             width: 85%;
-        }
-        #h-container {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center; 
-            width: 90%;
         }
         h1 {
             color: #ffffff;
