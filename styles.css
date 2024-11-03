@@ -1,4 +1,34 @@
+/* styles.css */
 
+/* Dreieck Styling */
+.toggle-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.triangle {
+    margin-right: 5px;
+    transition: transform 0.3s;
+}
+
+/* Standardmäßig sind Untermenüs verborgen */
+.submenu {
+    display: none;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+/* Anzeige, wenn ein Untermenü aktiv ist */
+.submenu.active {
+    display: block;
+}
+
+/* Rotation des Dreiecks bei Aktivierung */
+.triangle.open {
+    transform: rotate(90deg);
+}
         /* Haupt-Container für die Farbauswahl */
 .color-selector {
     width: 90%;
