@@ -10,7 +10,7 @@
 
 .triangle {
     margin-right: 8px;
-    transition: transform 0.6s;
+    transition: transform 0.5s;
 }
 
 /* Standardmäßig sind Untermenüs verborgen */
@@ -83,7 +83,7 @@
             margin: 0;
             padding-top: 10px;
             box-sizing: border-box;
-            transition: background-color 1.8s ease;
+            transition: background-color 3.0s ease;
         }
         #password-container {
             display: flex;
