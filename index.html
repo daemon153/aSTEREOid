@@ -16,7 +16,6 @@
             <button id="submit-button">Enter…</button>
         </div>
     </div>
-    
     <div id="protected-content" style="display: none; flex-direction: column; align-items: center;">
         <h1>aSTEREOid</h1>
         <h2>Streams & Sets</h2>
@@ -26,7 +25,6 @@
                 allow="autoplay" allowfullscreen 
                 webkitallowfullscreen mozallowfullscreen 
                 oallowfullscreen msallowfullscreen></iframe>
-        
         <div class="color-selector">
             <div class="color-square" data-color="#2f2f2f"></div> <!-- Anthrazit -->
             <div class="color-square" data-color="#992200"></div> <!-- Dunkles Orange -->
@@ -35,7 +33,6 @@
             <div class="color-square" data-color="#11270b"></div> <!-- Gebrochenes Moorgrün -->
         </div>
         <div id="link-container" style="margin-bottom: 30px;">
-        <!-- Platzhalter für das Menü -->
         <div id="menu-placeholder"></div>
             <img src="new.png" class="overlay-image">
         </div>
@@ -48,13 +45,9 @@
             &copy;2024 aSTEREOid - Club #1 on Earth est. 2019 by EVE13 & daemon - finest Disco, House, Electro & Techno
         </div>
     </div>
-    
-    <!-- JavaScript -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const passwordUrl = 'xp.json'; // Pfad zur JSON-Datei mit dem Passwort
-
-            // Passwort laden und überprüfen
+            const passwordUrl = 'xp.json'; 
             let correctPassword = "";
             fetch(passwordUrl)
                 .then(response => response.json())
@@ -65,8 +58,6 @@
                 .catch(error => {
                     console.error("Fehler beim Laden des Passworts:", error);
                 });
-
-            // Gespeichertes Passwort überprüfen
             function checkStoredPassword() {
                 const storedPassword = localStorage.getItem("storedPassword");
                 const storedDate = localStorage.getItem("passwordDate");
@@ -78,14 +69,10 @@
                     localStorage.removeItem("passwordDate");
                 }
             }
-
-            // Geschütztes Inhaltsbereich anzeigen
             function showProtectedContent() {
                 document.getElementById("password-container").style.display = "none";
                 document.getElementById("protected-content").style.display = "flex";
             }
-
-            // Passwort-Überprüfung beim Klick auf "Enter"
             document.getElementById("submit-button").addEventListener("click", function() {
                 const input = document.getElementById("password-input").value;
                 if (input === correctPassword) {
@@ -97,8 +84,6 @@
                     alert("Falsches Passwort. Zugang verwehrt!");
                 }
             });
-
-            // Passwort-Anzeige ein-/ausblenden
             document.getElementById("toggle-password").addEventListener("click", function() {
                 const passwordInput = document.getElementById("password-input");
                 const toggleButton = document.getElementById("toggle-password");
@@ -110,8 +95,6 @@
                     toggleButton.textContent = "👁";
                 }
             });
-
-            // Hintergrundfarbe für Farbquadrate speichern
             const colorSquares = document.querySelectorAll('.color-square');
             colorSquares.forEach(square => {
                 square.addEventListener('click', () => {
@@ -120,20 +103,14 @@
                     localStorage.setItem('backgroundColor', selectedColor);
                 });
             });
-
-            // Hintergrundfarbe beim Laden setzen
             const savedColor = localStorage.getItem('backgroundColor');
             if (savedColor) document.body.style.backgroundColor = savedColor;
-
-            // Menü aus menue.html laden
             fetch('menue.html')
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById('menu-placeholder').innerHTML = data;
                     initializeMenu();
                 });
-
-            // Menü-Interaktion initialisieren
             function initializeMenu() {
                 const toggleButtons = document.querySelectorAll('.toggle-button');
                 const submenus = document.querySelectorAll('.submenu');
