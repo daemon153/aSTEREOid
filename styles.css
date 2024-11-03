@@ -43,6 +43,7 @@
     margin-top: 5px; /* Optionaler Abstand nach oben */
 }
 .overlay-image {
+    z-index: 2;
     position: absolute;
     top: 0; /* Platziert das Bild oben im Container */
     right: 0; /* Platziert das Bild am rechten Rand */
