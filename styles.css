@@ -143,6 +143,7 @@
             display: block;
         }
         .footer {
+            z-index: 0;
             width: 90%;
             position: relative;
             padding: 10px;
