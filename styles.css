@@ -17,6 +17,7 @@
 .submenu {
     display: none;
     padding-left: 20px;
+    font-size: 0.8em;
 }
 
 /* Anzeige, wenn ein Untermenü aktiv ist */
