@@ -42,7 +42,7 @@
         fetch('menue.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('menu-placeholder').innerHTML = data;
+                document.getElementById('menue-placeholder').innerHTML = data;
                 initializeMenu(); // Interaktionen nach dem Laden initialisieren
             });
 
