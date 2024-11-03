@@ -27,7 +27,7 @@
 .submenu a {
     margin: 0;
     padding: 0;
-    font-size: 0.8em;
+    font-size: 0.7em;
 }
 
 /* Rotation des Dreiecks bei Aktivierung */
@@ -55,7 +55,7 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
-    transition: transform 0.2s ease; /* Leichter Hover-Effekt */
+    transition: transform 0.5s ease; /* Leichter Hover-Effekt */
 }
 
 .color-square:hover {
@@ -80,7 +80,7 @@
             margin: 0;
             padding-top: 10px;
             box-sizing: border-box;
-            transition: background-color 0.9s ease;
+            transition: background-color 1.8s ease;
         }
         #password-container {
             display: flex;
