@@ -9,7 +9,7 @@
 }
 
 .triangle {
-    margin-right: 5px;
+    margin-right: 8px;
     transition: transform 0.6s;
 }
 
@@ -22,6 +22,12 @@
 /* Anzeige, wenn ein Untermenü aktiv ist */
 .submenu.active {
     display: block;
+}
+
+.submenu a {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
 }
 
 /* Rotation des Dreiecks bei Aktivierung */
