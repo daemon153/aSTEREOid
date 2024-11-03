@@ -52,6 +52,12 @@
     height: auto; /* Höhe wird entsprechend der Breite skaliert */
     padding-top: 20px;
 }
+.logo {
+    top: 0;
+    width: 250;
+    height: auto;
+    padding: 20px;
+}
 /* Einzelne Farbquadrate */
 .color-square {
     width: 20px;
