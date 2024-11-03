@@ -55,7 +55,7 @@
 .logo {
     position: relative;
     top: 0;
-    width: 350px;
+    width: 50%;
     height: auto;
     padding-top: 20px;
 }
@@ -106,6 +106,13 @@
             flex-direction: column;
             justify-content: left; 
             width: 85%;
+        }
+        #h-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; 
+            width: 90%;
         }
         h1 {
             color: #ffffff;
