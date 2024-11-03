@@ -6,6 +6,8 @@
     <title>aSTEREOid - Streams & Sets</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+    <script src="script.js"></script>
+    <script pStrng="xp.json"></script>
 <body>
     <div id="password-container">
         <h1>aSTEREOid</h1>
@@ -36,54 +38,6 @@
 <div id="menue-placeholder"></div>
         <!-- JavaScript-Dateien laden -->
 <script src="script.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Lädt den Inhalt von menu.html in den Platzhalter
-        fetch('menue.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('menue-placeholder').innerHTML = data;
-                initializeMenu(); // Interaktionen nach dem Laden initialisieren
-            });
-
-        // Funktion, um die Interaktionslogik hinzuzufügen, nachdem das Menü geladen wurde
-        function initializeMenu() {
-            const toggleButtons = document.querySelectorAll('.toggle-button');
-            const submenus = document.querySelectorAll('.submenu');
-
-            // Event Listener für alle Toggle-Buttons
-            toggleButtons.forEach(button => {
-                button.addEventListener('click', (event) => {
-                    event.stopPropagation(); // Verhindert, dass das Klick-Event weiter nach oben geht
-                    const targetId = button.getAttribute('data-target');
-                    const targetMenu = document.getElementById(targetId);
-
-                    // Alle Untermenüs und Dreiecke zurücksetzen
-                    submenus.forEach(menu => {
-                        if (menu !== targetMenu) {
-                            menu.classList.remove('active');
-                        }
-                    });
-                    toggleButtons.forEach(btn => {
-                        if (btn !== button) {
-                            btn.querySelector('.triangle').classList.remove('open');
-                        }
-                    });
-
-                    // Das ausgewählte Untermenü ein- oder ausblenden
-                    targetMenu.classList.toggle('active');
-                    button.querySelector('.triangle').classList.toggle('open');
-                });
-            });
-
-            // Schließt alle Menüs bei Klick außerhalb
-            document.addEventListener('click', () => {
-                submenus.forEach(menu => menu.classList.remove('active'));
-                toggleButtons.forEach(button => button.querySelector('.triangle').classList.remove('open'));
-            });
-        }
-    });
-</script>    
         <div class="footer">
             Die Inhalte dieser Website sind ausschließlich für private Zwecke.
             Weder jetzt noch in Zukunft werden öffentliche und/oder finanzielle Ziele angestrebt.
@@ -95,7 +49,7 @@
     </div>
     <script>
         let correctPassword = "";
-        fetch(pString)
+        fetch(pStrng)
             .then(response => response.json())
             .then(data => {
                 correctPassword = data.password;
@@ -166,6 +120,54 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.backgroundColor = savedColor;
     }
 });
+    document.addEventListener("DOMContentLoaded", function() {
+        // Lädt den Inhalt von menu.html in den Platzhalter
+        fetch('menue.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menue-placeholder').innerHTML = data;
+                initializeMenu(); // Interaktionen nach dem Laden initialisieren
+            });
+
+        // Funktion, um die Interaktionslogik hinzuzufügen, nachdem das Menü geladen wurde
+        function initializeMenu() {
+            const toggleButtons = document.querySelectorAll('.toggle-button');
+            const submenus = document.querySelectorAll('.submenu');
+
+            // Event Listener für alle Toggle-Buttons
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    event.stopPropagation(); // Verhindert, dass das Klick-Event weiter nach oben geht
+                    const targetId = button.getAttribute('data-target');
+                    const targetMenu = document.getElementById(targetId);
+
+                    // Alle Untermenüs und Dreiecke zurücksetzen
+                    submenus.forEach(menu => {
+                        if (menu !== targetMenu) {
+                            menu.classList.remove('active');
+                        }
+                    });
+                    toggleButtons.forEach(btn => {
+                        if (btn !== button) {
+                            btn.querySelector('.triangle').classList.remove('open');
+                        }
+                    });
+
+                    // Das ausgewählte Untermenü ein- oder ausblenden
+                    targetMenu.classList.toggle('active');
+                    button.querySelector('.triangle').classList.toggle('open');
+                });
+            });
+
+            // Schließt alle Menüs bei Klick außerhalb
+            document.addEventListener('click', () => {
+                submenus.forEach(menu => menu.classList.remove('active'));
+                toggleButtons.forEach(button => button.querySelector('.triangle').classList.remove('open'));
+            });
+        }
+    });
+
+        
     </script>
 </body>
 </html>
