@@ -48,7 +48,7 @@
     position: absolute;
     top: 0; /* Platziert das Bild oben im Container */
     right: 0; /* Platziert das Bild am rechten Rand */
-    width: 140px; /* Breite des Bildes anpassen */
+    width: 15%; /* Breite des Bildes anpassen */
     height: auto; /* Höhe wird entsprechend der Breite skaliert */
     padding-top: 20px;
 }
