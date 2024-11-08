@@ -61,7 +61,7 @@
 }
 .logo {
     width: auto; /* Setzt die Breite auf 75% des Containers */
-    height: 15%; /* Beibehaltung des Seitenverhältnisses */
+    height: 15vh; /* Beibehaltung des Seitenverhältnisses */
 }
 
 /* Einzelne Farbquadrate */
