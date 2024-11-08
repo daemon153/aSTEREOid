@@ -25,7 +25,7 @@
 }
 
 .submenu a {
-    font-size: 0.7em;
+    font-size: 0.8em;
     margin: 0;
     padding: 0;
 }
@@ -114,7 +114,7 @@
         }
         h1 {
             color: #ffffff;
-            font-size: 2.0em;
+            font-size: 2.5em;
             font-weight: bold;
             margin: 0;
             text-align: center;
@@ -146,7 +146,7 @@
             background-color: #777777;
         }
         h2 {
-            font-size: 1.3em;
+            font-size: 1.6em;
             font-weight: normal;
             color: #cccccc; /* Leichtes Grau */
             text-align: center;
@@ -162,13 +162,13 @@
             text-align: justify;
             display: flex;
             flex-direction: column;
-            font-size: 0.5em; 
+            font-size: 0.6em; 
             color: #666666; 
         }
         a {
             color: #cccccc; /* Hellgrau */
             text-align: left;
-            font-size: 0.7em;
+            font-size: 0.8em;
             font-weight: normal;
             text-decoration: none;
             cursor: pointer;
