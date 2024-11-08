@@ -31,6 +31,7 @@ body {
     margin: 20px 0;
     width: 100%;
     max-width: 800px; /* Maximale Breite für größere Bildschirme */
+    max-height: 80%;
 }
 
 .nav-button {
@@ -41,7 +42,7 @@ body {
 }
 
 .display {
-    width: auto;
+    width: 100%;
     height: auto;
     display: flex;
     align-items: center;
@@ -51,7 +52,7 @@ body {
 }
 
 #display-image {
-    width: 100%;
+    width: auto;
     height: auto;
     object-fit: contain;
 }
