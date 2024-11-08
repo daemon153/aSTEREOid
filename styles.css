@@ -27,8 +27,7 @@
 .submenu a {
     font-size: 0.7em;
     margin: 0;
-    padding-top: 3;
-    padding-bottom: 3;
+    padding: 0;
 }
 
 /* Rotation des Dreiecks bei Aktivierung */
@@ -48,9 +47,9 @@
     position: absolute;
     top: 0; /* Platziert das Bild oben im Container */
     right: 0; /* Platziert das Bild am rechten Rand */
-    width: 25%; /* Breite des Bildes anpassen */
+    width: 20%; /* Breite des Bildes anpassen */
     height: auto; /* Höhe wird entsprechend der Breite skaliert */
-    padding-top: 20px;
+    padding-top: 10px;
 }
 .h-container {
     display: flex;
@@ -61,8 +60,8 @@
     padding: 20px;
 }
 .logo {
-    width: 50%; /* Setzt die Breite auf 75% des Containers */
-    height: auto; /* Beibehaltung des Seitenverhältnisses */
+    width: auto; /* Setzt die Breite auf 75% des Containers */
+    height: 15%; /* Beibehaltung des Seitenverhältnisses */
 }
 
 /* Einzelne Farbquadrate */
@@ -115,7 +114,7 @@
         }
         h1 {
             color: #ffffff;
-            font-size: 3.2em;
+            font-size: 2.0em;
             font-weight: bold;
             margin: 0;
             text-align: center;
@@ -147,7 +146,7 @@
             background-color: #777777;
         }
         h2 {
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: normal;
             color: #cccccc; /* Leichtes Grau */
             text-align: center;
@@ -169,6 +168,7 @@
         a {
             color: #cccccc; /* Hellgrau */
             text-align: left;
+            font-size: 0.7em;
             font-weight: normal;
             text-decoration: none;
             cursor: pointer;
