@@ -41,7 +41,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #333;
+    border: 1px solid #000000;
     margin: 0 10px;
     overflow: hidden;
 }
@@ -51,18 +51,18 @@ body {
     max-height: 100%;
 }
 
-.background-color-selector {
+.color-selector {
+    width: 90%;
     display: flex;
-    justify-content: center;
-    margin: 10px 0;
-    gap: 10px;
+    justify-content: right; 
+    gap: 5px; /* Abstand zwischen den Quadraten */
+    margin-top: 5px; /* Optionaler Abstand nach oben */
 }
 
 .color-square {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    border: 1px solid #333;
 }
 
 .thumbnail-container {
