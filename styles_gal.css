@@ -10,6 +10,8 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #2f2f2f;
+    max-height: 100vh; /* Maximalhöhe auf die Viewporthöhe beschränken */
+    overflow: hidden; /* Überlauf verstecken */
 }
 
 .logo-container {
@@ -40,7 +42,6 @@ body {
 
 .display {
     width: 100%;
-    max-width: 600px; /* Maximale Breite */
     height: auto;
     display: flex;
     align-items: center;
@@ -72,7 +73,7 @@ body {
 .thumbnail-container {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 20px; /* Abstand von 20px zur Anzeigefenster */
     width: 100%;
     max-width: 600px; /* Maximale Breite für Thumbnails */
 }
@@ -99,6 +100,22 @@ body {
     height: 60px;
     cursor: pointer;
     object-fit: cover;
+}
+
+.back-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    color: #cccccc;
 }
 
 /* Responsive Anpassungen für kleinere Bildschirme */
