@@ -29,10 +29,10 @@ body {
 }
 
 .back-button {
-    position: absolute;
-    top: 20px;
+    position: fixed;
+    bottom: 20px;
     left: 20px;
-    font-size: 24px;
+    font-size: 20px;
     color: #ffffff;
     text-decoration: none;
     background-color: transparent;
