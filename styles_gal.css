@@ -2,8 +2,8 @@
 body {
     background-color: #2f2f2f;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -27,30 +27,29 @@ body {
 
 /* Logo-Container für zentrierte Ausrichtung */
 .logo-container {
-    margin-top: 20px;
     text-align: center;
+    margin-top: 20px;
 }
 
-/* Logo-Größe */
 .logo {
-    width: 50%;
-    max-width: 300px;
+    width: 50vw; /* Logo nimmt 50% der Bildschirmbreite ein */
     height: auto;
+    max-width: 300px; /* Optionale maximale Breite */
 }
 
 /* Thumbnail-Leiste */
 .thumbnail-container {
-    width: 80%;
+    width: 80%; /* Thumbnail-Leiste nimmt 80% der Breite ein */
     display: flex;
+    justify-content: center;
     overflow-x: auto;
     gap: 10px;
+    height: 15vh; /* Höhe 15% des Bildschirms */
     margin-top: 20px;
-    padding-bottom: 10px;
-    justify-content: center;
 }
 
 .thumbnail {
-    height: 15vh; /* Höhe jedes Thumbnails beträgt 15% der Viewport-Höhe */
+    height: 100%; /* Thumbnail passt sich der Höhe der Leiste an */
     width: auto;
     object-fit: cover;
     cursor: pointer;
@@ -59,5 +58,23 @@ body {
 }
 
 .thumbnail:hover {
-    transform: scale(1.1); /* Leichter Zoom-Effekt beim Hover */
+    transform: scale(1.1);
+}
+
+/* Bildanzeige */
+.image-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw; /* Maximale Breite 90% des Bildschirms */
+    max-height: 60vh; /* Maximale Höhe 60% des Bildschirms */
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+#display-image {
+    width: 100%;
+    height: auto;
+    max-height: 60vh; /* Bild passt sich maximal 60% der Bildschirmhöhe an */
+    object-fit: contain;
 }
