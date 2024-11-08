@@ -17,18 +17,19 @@
 .submenu {
     display: none;
     padding-left: 25px;
-    font-size: 9px;
+    font-size: 10px;
 }
 
 /* Anzeige, wenn ein Untermenü aktiv ist */
 .submenu.active {
-    display: block;
+    display: flex;
     margin: 0;
     padding: 0;
 }
 
 .submenu a {
-    font-size: 9px;
+    display: flex;
+    font-size: 10px;
     margin: 0;
     padding: 0;
 }
@@ -109,7 +110,7 @@
         }
         #link-container {
             position: relative;
-            font-size: 9px;
+            font-size: 10px;
             font-weight: bold;
             display: flex;
             flex-direction: column;
@@ -172,7 +173,7 @@
         a {
             color: #cccccc; /* Hellgrau */
             text-align: left;
-            font-size: 9px;
+            font-size: 10px;
             font-weight: normal;
             text-decoration: none;
             cursor: pointer;
