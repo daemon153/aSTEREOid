@@ -44,7 +44,7 @@ body {
     justify-content: center;
     overflow-x: auto;
     gap: 10px;
-    height: 15vh; /* Höhe 15% des Bildschirms */
+    height: 10vh; /* Höhe % des Bildschirms */
     margin-top: 20px;
 }
 
@@ -53,7 +53,6 @@ body {
     width: auto;
     object-fit: cover;
     cursor: pointer;
-    border: 2px solid #333;
     transition: transform 0.2s;
 }
 
@@ -67,7 +66,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 90vw; /* Maximale Breite 90% des Bildschirms */
-    max-height: 60vh; /* Maximale Höhe 60% des Bildschirms */
+    max-height: 50vh; /* Maximale Höhe 60% des Bildschirms */
     margin-top: 20px;
     overflow: hidden;
 }
@@ -75,6 +74,6 @@ body {
 #display-image {
     width: 100%;
     height: auto;
-    max-height: 60vh; /* Bild passt sich maximal 60% der Bildschirmhöhe an */
+    max-height: 50vh; /* Bild passt sich maximal 60% der Bildschirmhöhe an */
     object-fit: contain;
 }
