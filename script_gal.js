@@ -1,6 +1,5 @@
-// Array mit Bild-URLs
+// Array mit den Bilddateinamen aus dem Verzeichnis "pix"
 const imageUrls = [
-    const imageUrls = [
     "pix/Resize_20241108_181342_2357.jpg",
     "pix/Resize_20241108_181342_2907.jpg",
     "pix/Resize_20241108_181343_3317.jpg",
@@ -31,15 +30,11 @@ const imageUrls = [
     "pix/Resize_20241108_181358_8238.jpg",
     "pix/Resize_20241108_181358_8527.jpg"
 ];
-    // Füge hier weitere Bild-URLs hinzu
-];
+let currentIndex = 0;
 
-let currentIndex = 0; // Aktuelle Bildindex
-
-// Initialisiere Galerie mit Thumbnails
+// Initialisiere die Galerie
 function initGallery() {
-    const thumbnailContainer = document.querySelector('.thumbnails');
-    
+    const thumbnailContainer = document.getElementById('thumbnails');
     imageUrls.forEach((url, index) => {
         const img = document.createElement('img');
         img.src = url;
@@ -47,8 +42,6 @@ function initGallery() {
         img.onclick = () => displayImage(index);
         thumbnailContainer.appendChild(img);
     });
-
-    // Zeige das erste Bild an
     displayImage(currentIndex);
 }
 
@@ -75,5 +68,38 @@ function prevImage() {
 document.getElementById('next-display').addEventListener('click', nextImage);
 document.getElementById('prev-display').addEventListener('click', prevImage);
 
-// Galerie initialisieren
-initGallery();
+// Funktion zum Setzen der Hintergrundfarbe
+function setBackgroundColor(color) {
+    document.body.style.backgroundColor = color;
+    localStorage.setItem('backgroundColor', color); // Speichert die Farbe in Local Storage
+}
+
+// Funktion zum Laden der gespeicherten Hintergrundfarbe beim Seitenaufruf
+function loadBackgroundColor() {
+    const savedColor = localStorage.getItem('backgroundColor');
+    if (savedColor) {
+        setBackgroundColor(savedColor);
+    } else {
+        // Setzt die Standardfarbe (erste Farbe im Selector)
+        const defaultColor = document.querySelector('.color-square').getAttribute('data-color');
+        setBackgroundColor(defaultColor);
+    }
+}
+
+// Event Listener für die Farbwahl
+function initColorSelector() {
+    const colorSquares = document.querySelectorAll('.color-square');
+    colorSquares.forEach(square => {
+        square.addEventListener('click', () => {
+            const selectedColor = square.getAttribute('data-color');
+            setBackgroundColor(selectedColor);
+        });
+    });
+}
+
+// Initialisierung beim Laden der Seite
+window.addEventListener('DOMContentLoaded', () => {
+    loadBackgroundColor();
+    initColorSelector();
+    initGallery();
+});
