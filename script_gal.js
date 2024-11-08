@@ -51,6 +51,14 @@ function loadThumbnails() {
         // Klick-Event, um das gewählte Bild in der Anzeige zu zeigen
         img.addEventListener('click', () => {
             displayImage.src = src;
+            
+            // Entfernt die 'selected'-Klasse von allen anderen Thumbnails
+            document.querySelectorAll('.thumbnail').forEach(thumbnail => {
+                thumbnail.classList.remove('selected');
+            });
+            
+            // Fügt der aktuellen Auswahl die 'selected'-Klasse hinzu
+            img.classList.add('selected');
         });
         
         container.appendChild(img);
