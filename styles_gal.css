@@ -56,13 +56,19 @@ body {
     width: auto;
     object-fit: cover;
     cursor: pointer;
-    /* border: 2px solid #333; */
     scroll-snap-align: start; /* Jedes Thumbnail snappt am Anfang der Leiste */
-    transition: transform 0.2s;
+    transition: border 0.3s ease; /* Smooth transition für den Rahmen */
 }
 
+/* Entfernen des Hover-Zooms */
 .thumbnail:hover {
-    transform: scale(1.1);
+    transform: none;
+}
+
+/* Stil für das ausgewählte Thumbnail */
+.thumbnail.selected {
+    border: 2px solid #39ff14; /* Neon-grüner Rahmen */
+    transition: border 0.3s ease; /* Smooth transition für das Hinzufügen des Rahmens */
 }
 
 /* Bildanzeige */
