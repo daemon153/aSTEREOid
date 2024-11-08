@@ -31,16 +31,24 @@ const images = [
     "pix/Resize_20241108_181358_8527.jpg"
 ];
 
-// Funktion zum Laden der Thumbnails
+// Funktion zum Laden der Thumbnails und zur Bildanzeige
 function loadThumbnails() {
     const container = document.getElementById('thumbnail-container');
+    const displayImage = document.getElementById('display-image');
+    
     images.forEach(src => {
         const img = document.createElement('img');
         img.src = src;
         img.classList.add('thumbnail');
+        
+        // Klick-Event, um das gewählte Bild in der Anzeige zu zeigen
+        img.addEventListener('click', () => {
+            displayImage.src = src;
+        });
+        
         container.appendChild(img);
     });
 }
 
-// Seite initialisieren
+// Initialisiere die Seite beim Laden
 window.addEventListener('DOMContentLoaded', loadThumbnails);
