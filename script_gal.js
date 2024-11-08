@@ -1,3 +1,19 @@
+// Funktion, um die Hintergrundfarbe aus dem Local Storage zu laden und anzuwenden
+function applyBackgroundColorFromLocalStorage() {
+    // Prüfe, ob eine Hintergrundfarbe im Local Storage gespeichert ist
+    const savedColor = localStorage.getItem('backgroundColor');
+
+    // Wenn eine Farbe gefunden wurde, wende sie auf den Seitenhintergrund an
+    if (savedColor) {
+        document.body.style.backgroundColor = savedColor;
+    }
+}
+
+// Hintergrundfarbe anwenden, sobald die Seite geladen ist
+window.addEventListener('DOMContentLoaded', () => {
+    applyBackgroundColorFromLocalStorage();
+});
+
 // Liste der Bilddateien für die Thumbnails
 const images = [
     "pix/Resize_20241108_181342_2357.jpg",
