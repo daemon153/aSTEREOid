@@ -24,7 +24,6 @@ const images = [
 "pix/Resize_20241108_181345_5167.jpg",
 "pix/Resize_20241108_181347_7213.jpg",
 "pix/Resize_20241108_181348_8159.jpg",
-"pix/Resize_20241108_181349_9639.jpg",
 "pix/Resize_20241108_181350_0198.jpg",
 "pix/Resize_20241108_181351_1007.jpg",
 "pix/Resize_20241108_181351_1419.jpg",
