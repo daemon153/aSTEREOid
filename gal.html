@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Logo -->
+    <div class="logo-container">
+        <img src="aSTEREOid.png" alt="Logo" class="logo">
+    </div>
+
+    <!-- Anzeigefenster -->
+    <div class="display-container">
+        <button class="nav-button" id="prev-display">&#9664;</button>
+        <div class="display">
+            <!-- Das ausgewählte Bild wird hier angezeigt -->
+            <img src="path_to_your_image" alt="Anzeigefenster Bild" id="display-image">
+        </div>
+        <button class="nav-button" id="next-display">&#9654;</button>
+    </div>
+
+    <!-- Hintergrundfarben Auswahl -->
+    <div class="background-color-selector">
+        <div class="color-box" data-color="#ffffff"></div>
+        <div class="color-box" data-color="#f0f0f0"></div>
+        <div class="color-box" data-color="#cccccc"></div>
+        <div class="color-box" data-color="#333333"></div>
+        <div class="color-box" data-color="#000000"></div>
+    </div>
+
+    <!-- Thumbnail-Leiste -->
+    <div class="thumbnail-container">
+        <button class="scroll-button" id="scroll-left">&#9664;</button>
+        <div class="thumbnails">
+            <!-- Thumbnails werden hier angezeigt -->
+            <img src="path_to_thumbnail_image" alt="Thumbnail" class="thumbnail">
+            <!-- Weitere Thumbnails hier -->
+        </div>
+        <button class="scroll-button" id="scroll-right">&#9654;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
