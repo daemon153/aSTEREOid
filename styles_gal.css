@@ -41,11 +41,14 @@ body {
 .thumbnail-container {
     width: 80%; /* Thumbnail-Leiste nimmt 80% der Breite ein */
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     overflow-x: auto;
     gap: 10px;
-    height: 10vh; /* Höhe % des Bildschirms */
+    height: 8vh; /* Höhe % des Bildschirms */
     margin-top: 20px;
+    padding-bottom: 10px;
+    scroll-behavior: smooth; /* Sorgt für sanftes Scrollen */
+    scroll-snap-type: x mandatory; /* Snappt die Thumbnails bei Scrollen */
 }
 
 .thumbnail {
@@ -53,6 +56,8 @@ body {
     width: auto;
     object-fit: cover;
     cursor: pointer;
+    /* border: 2px solid #333; */
+    scroll-snap-align: start; /* Jedes Thumbnail snappt am Anfang der Leiste */
     transition: transform 0.2s;
 }
 
@@ -66,7 +71,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 90vw; /* Maximale Breite 90% des Bildschirms */
-    max-height: 50vh; /* Maximale Höhe 60% des Bildschirms */
+    max-height: 50vh; /* Maximale Höhe % des Bildschirms */
     margin-top: 20px;
     overflow: hidden;
 }
@@ -74,6 +79,6 @@ body {
 #display-image {
     width: 100%;
     height: auto;
-    max-height: 50vh; /* Bild passt sich maximal 60% der Bildschirmhöhe an */
+    max-height: 50vh; /* Bild passt sich maximal % der Bildschirmhöhe an */
     object-fit: contain;
 }
