@@ -1,6 +1,6 @@
-/* Hintergrundfarbe der Seite (voreingestellt von index.html) */
+/* Hintergrundfarbe der Seite */
 body {
-    background-color: #2f2f2f; /* Ersetze diesen Farbcode durch die voreingestellte Hintergrundfarbe */
+    background-color: #2f2f2f;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -22,7 +22,7 @@ body {
 }
 
 .back-button:hover {
-    color: #cccccc; /* Optionaler Hover-Effekt für bessere Sichtbarkeit */
+    color: #cccccc;
 }
 
 /* Logo-Container für zentrierte Ausrichtung */
@@ -33,7 +33,31 @@ body {
 
 /* Logo-Größe */
 .logo {
-    width: 50%; /* Passt das Logo auf 50% der Bildschirmbreite an */
-    max-width: 300px; /* Maximale Breite des Logos */
+    width: 50%;
+    max-width: 300px;
     height: auto;
+}
+
+/* Thumbnail-Leiste */
+.thumbnail-container {
+    width: 80%;
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    justify-content: center;
+}
+
+.thumbnail {
+    height: 15vh; /* Höhe jedes Thumbnails beträgt 15% der Viewport-Höhe */
+    width: auto;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #333;
+    transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1); /* Leichter Zoom-Effekt beim Hover */
 }
