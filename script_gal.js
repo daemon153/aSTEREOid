@@ -1,8 +1,8 @@
 // Array mit Bild-URLs
 const imageUrls = [
-    "https://drive.google.com/file/d/19qwqNSMPt5NdY4iB5Ebv0mVNs10CZRqZ",
-    "https://drive.google.com/file/d/19pGUm3zY3Gakar6rtrY0WW_E86yQn1pQ",
-    "https://drive.google.com/file/d/18rAihBXaCp1ysgi7zUNuJRzxfO0NkTkT",
+    "https://drive.google.com/uc?id=19qwqNSMPt5NdY4iB5Ebv0mVNs10CZRqZ",
+    "https://drive.google.com/uc?id=19pGUm3zY3Gakar6rtrY0WW_E86yQn1pQ",
+    "https://drive.google.com/uc?id=18rAihBXaCp1ysgi7zUNuJRzxfO0NkTkT",
     // Füge hier weitere Bild-URLs hinzu
 ];
 
