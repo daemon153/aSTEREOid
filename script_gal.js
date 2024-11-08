@@ -50,8 +50,7 @@ const images = [
 "pix/Resize_20241108_181359_9184.jpg",
 "pix/Resize_20241108_181359_9383.jpg",
 "pix/Resize_20241108_181359_9547.jpg",
-"pix/Resize_20241108_181359_9771.jpg",
-"pix/Resize_20241108_181359_9954.jpg"
+"pix/Resize_20241108_181359_9771.jpg"
 ];
 
 // Funktion zum Laden der Thumbnails und zur Bildanzeige
