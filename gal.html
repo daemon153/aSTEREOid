@@ -4,44 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galerie</title>
-    <link rel="stylesheet" href="styles_gal.css">
+    <link rel="stylesheet" href="styles_gal.css"> <!-- Verknüpfung zur CSS-Datei für das Styling -->
 </head>
 <body>
-    <div class="content-container">
-        <!-- Logo -->
-        <div class="logo-container">
-            <img src="aSTEREOid.png" alt="Logo" class="logo">
-        </div>
+    <!-- Zurück-Button -->
+    <a href="index.html" class="back-button">Zurück</a>
 
-        <!-- Anzeigefenster -->
-        <div class="display-container">
-            <button class="nav-button" id="prev-display">&#9664;</button>
-            <div class="display">
-                <img src="" alt="Anzeigefenster Bild" id="display-image">
-            </div>
-            <button class="nav-button" id="next-display">&#9654;</button>
-        </div>
-
-        <!-- Hintergrundfarben Auswahl -->
-        <div class="background-color-selector">
-            <div class="color-square" data-color="#2f2f2f"></div> <!-- Anthrazit -->
-            <div class="color-square" data-color="#992200"></div> <!-- Dunkler Rotton -->
-            <div class="color-square" data-color="#003d48"></div> <!-- Petrol -->
-            <div class="color-square" data-color="#360000"></div> <!-- Dunkler Braunton -->
-            <div class="color-square" data-color="#11270b"></div> <!-- Gebrochenes Grün -->
-        </div>
-
-        <!-- Thumbnail-Leiste -->
-        <div class="thumbnail-container">
-            <button class="scroll-button" id="scroll-left">&#9664;</button>
-            <div class="thumbnails" id="thumbnails"></div>
-            <button class="scroll-button" id="scroll-right">&#9654;</button>
-        </div>
-
-        <!-- Zurück-Button -->
-        <a href="index.html" class="back-button">&#9664; Zurück</a>
+    <!-- Logo -->
+    <div class="logo-container">
+        <img src="aSTEREOid.png" alt="Logo" class="logo">
     </div>
-
-    <script src="script_gal.js"></script>
 </body>
 </html>
