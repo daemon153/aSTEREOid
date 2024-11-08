@@ -7,15 +7,26 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     background-color: #2f2f2f;
-    max-height: 90vh; /* Maximalhöhe auf die Viewporthöhe beschränken */
-    overflow: hidden; /* Überlauf verstecken */
+    height: 100vh; /* Passt die Höhe des gesamten Inhaltes auf die Bildschirmhöhe an */
+    overflow: hidden;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    height: 100%; /* Füllt die gesamte Höhe des Bildschirms */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .logo-container {
-    margin: 10px 0;
     text-align: center;
 }
 
@@ -28,10 +39,8 @@ body {
 .display-container {
     display: flex;
     align-items: center;
-    margin: 20px 0;
     width: 100%;
-    max-width: 800px; /* Maximale Breite für größere Bildschirme */
-    max-height: 80%;
+    max-width: 600px;
 }
 
 .nav-button {
@@ -43,31 +52,32 @@ body {
 
 .display {
     width: 100%;
+    max-width: 600px;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #000000;
+    border: 2px solid #333;
     overflow: hidden;
 }
 
 #display-image {
-    width: auto;
+    width: 100%;
     height: auto;
     object-fit: contain;
 }
 
 .background-color-selector {
     display: flex;
-    justify-content: right;
-    margin: 10px 0;
-    gap: 5px;
+    justify-content: center;
+    gap: 10px;
 }
 
 .color-square {
     width: 20px;
     height: 20px;
     cursor: pointer;
+    border: 1px solid #333;
 }
 
 .thumbnail-container {
@@ -75,7 +85,7 @@ body {
     align-items: center;
     margin-top: 20px; /* Abstand von 20px zur Anzeigefenster */
     width: 100%;
-    max-width: 600px; /* Maximale Breite für Thumbnails */
+    max-width: 600px;
 }
 
 .scroll-button {
@@ -103,15 +113,14 @@ body {
 }
 
 .back-button {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
+    align-self: flex-start; /* Ausrichtung des Zurück-Buttons nach links */
     font-size: 20px;
     color: #ffffff;
     text-decoration: none;
     background-color: transparent;
     border: none;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .back-button:hover {
@@ -134,6 +143,6 @@ body {
     }
 
     .nav-button {
-        font-size: 1.0em; /* Kleinere Navigationstasten auf mobilen Geräten */
+        font-size: 20px; /* Kleinere Navigationstasten auf mobilen Geräten */
     }
 }
