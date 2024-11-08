@@ -28,12 +28,12 @@ body {
 /* Logo-Container für zentrierte Ausrichtung */
 .logo-container {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .logo {
-    width: 50vw; /* Logo nimmt 50% der Bildschirmbreite ein */
-    height: auto;
+    width: auto; 
+    height: 10vh;
     max-width: 300px; /* Optionale maximale Breite */
 }
 
