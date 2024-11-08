@@ -1,170 +1,39 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Hintergrundfarbe der Seite (voreingestellt von index.html) */
 body {
+    background-color: #2f2f2f; /* Ersetze diesen Farbcode durch die voreingestellte Hintergrundfarbe */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #2f2f2f;
-    height: 100vh; /* Passt die Höhe des gesamten Inhaltes auf die Bildschirmhöhe an */
-    overflow: hidden;
+    position: relative;
 }
 
-.content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 600px;
-    height: 100%; /* Füllt die gesamte Höhe des Bildschirms */
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.logo-container {
-    text-align: center;
-}
-
-.logo {
-    width: 50%; /* Logo ist 50% der Breite des Anzeigefensters */
-    height: auto;
-    max-width: 300px; /* Begrenzung der maximalen Breite auf großen Bildschirmen */
-}
-
-.display-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    flex-grow: 1; /* Erlaubt dem Anzeigefenster, den restlichen Platz auszufüllen */
-}
-
-.nav-button {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.display {
-    width: 100%;
-    max-width: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #333;
-    overflow: hidden;
-    flex-grow: 1; /* Das Display nimmt den verbleibenden Platz ein */
-}
-
-#display-image {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-}
-
-/* Hintergrundfarben-Selector */
-.background-color-selector {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.color-square {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    border: 1px solid #333;
-}
-
-.thumbnail-container {
-    display: flex;
-    align-items: center;
-    margin-top: 20px; /* Abstand von 20px zur Anzeigefenster */
-    width: 100%;
-    max-width: 600px;
-}
-
-.scroll-button {
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.thumbnails {
-    display: flex;
-    overflow-x: auto;
-    width: 100%;
-    gap: 5px;
-    padding: 5px;
-    border-top: 1px solid #333;
-    border-bottom: 1px solid #333;
-}
-
-.thumbnail {
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    object-fit: cover;
-}
-
+/* Zurück-Button oben links */
 .back-button {
-    align-self: flex-start; /* Ausrichtung des Zurück-Buttons nach links */
-    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 10px;
+    font-weight: bold;
     color: #ffffff;
     text-decoration: none;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
 }
 
 .back-button:hover {
-    color: #cccccc;
+    color: #cccccc; /* Optionaler Hover-Effekt für bessere Sichtbarkeit */
 }
 
-/* Anpassungen für Hoch- und Querformat */
-@media (orientation: landscape) {
-    #display-image {
-        max-width: 100%;
-        max-height: none;
-        height: auto;
-    }
+/* Logo-Container für zentrierte Ausrichtung */
+.logo-container {
+    margin-top: 20px;
+    text-align: center;
 }
 
-@media (orientation: portrait) {
-    #display-image {
-        max-height: 100%;
-        max-width: none;
-        width: auto;
-    }
-}
-
-/* Responsive Anpassungen für kleinere Bildschirme */
-@media (max-width: 768px) {
-    .logo {
-        width: 70%; /* Logo etwas kleiner auf kleineren Bildschirmen */
-    }
-
-    .display-container, .display, .thumbnail-container {
-        max-width: 90%; /* Reduziert die Breite auf kleineren Bildschirmen */
-    }
-
-    .thumbnail {
-        width: 50px;
-        height: 50px; /* Kleinere Thumbnails auf mobilen Geräten */
-    }
-
-    .nav-button {
-        font-size: 20px; /* Kleinere Navigationstasten auf mobilen Geräten */
-    }
+/* Logo-Größe */
+.logo {
+    width: 50%; /* Passt das Logo auf 50% der Bildschirmbreite an */
+    max-width: 300px; /* Maximale Breite des Logos */
+    height: auto;
 }
