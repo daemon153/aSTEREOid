@@ -28,6 +28,22 @@ body {
     margin: 20px 0;
 }
 
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    color: #cccccc;
+}
+
 .nav-button {
     background: none;
     border: none;
