@@ -171,13 +171,13 @@
 
 /* Anpassung für kleinere Bildschirme */
 @media (max-width: 768px) {
-    .submenu {
-        font-size: 0.7em;
+    .submenu.active {
+        font-size: 0.8em;
     }
 }
 
 @media (max-width: 480px) {
-    .submenu {
-        font-size: 0.6em;
+    .submenu.active {
+        font-size: 0.7em;
     }
 }
