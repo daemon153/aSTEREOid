@@ -21,13 +21,13 @@
 
 /* Anzeige, wenn ein Untermenü aktiv ist */
 .submenu.active {
-    display: flex;
+    display: block;
     margin: 0;
     padding: 0;
 }
 
 .submenu a {
-    display: block;
+    display: flex;
     margin: 0;
     padding: 0;
 }
