@@ -82,7 +82,7 @@
 .color-square:nth-child(5) { background-color: #11270b; } /* Gebrochenes Moorgrün */
 
         body {
-         -webkit-text-size-adjust: 100%; 
+       /*  -webkit-text-size-adjust: 100%; */
             background-color: #2F2F2F; 
             color: #FFFFFF;
             font-family: Verdana;
