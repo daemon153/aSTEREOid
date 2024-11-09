@@ -21,8 +21,6 @@
 
 /* Anzeige, wenn ein Untermenü aktiv ist */
 .submenu.active {
-    display: flex;
-    justify-content: left;
     font-size: 1.0em;
     margin: 0;
     padding: 0;
