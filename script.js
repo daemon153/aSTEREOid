@@ -35,9 +35,4 @@ document.addEventListener('click', (event) => {
         toggleButtons.forEach(button => button.querySelector('.triangle').classList.remove('open'));
     }
 });
-    function openMediaPlayer(event, url, type) {
-        event.preventDefault();
-        localStorage.setItem('mediaUrl', url);
-        localStorage.setItem('mediaType', type);
-        window.location.href = 'player.html'; // Öffnet die Player-Seite im gleichen Fenster
-    }
+    
