@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Player</title>
+    <style>
+        .player-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="player-container">
+    <h1>Media Player</h1>
+    <div id="media-player">
+        <!-- Der Player wird hier dynamisch eingefügt -->
+    </div>
+</div>
+
+<script>
+    function loadMediaPlayer() {
+        const mediaUrl = localStorage.getItem('mediaUrl');
+        const mediaType = localStorage.getItem('mediaType');
+        const playerContainer = document.getElementById('media-player');
+
+        if (mediaUrl && mediaType) {
+            if (mediaType === 'audio/m4a' || mediaType === 'audio/mp3') {
+                playerContainer.innerHTML = `<audio controls><source src="${mediaUrl}" type="${mediaType}">Dein Browser unterstützt dieses Audio-Format nicht.</audio>`;
+            } else if (mediaType === 'video/mp4') {
+                playerContainer.innerHTML = `<video controls><source src="${mediaUrl}" type="${mediaType}">Dein Browser unterstützt dieses Video-Format nicht.</video>`;
+            }
+        } else {
+            playerContainer.innerHTML = `<p>Keine Mediendatei ausgewählt.</p>`;
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', loadMediaPlayer);
+</script>
+
+</body>
+</html>
