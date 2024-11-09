@@ -16,13 +16,14 @@
 /* Standardmäßig sind Untermenüs verborgen */
 .submenu {
     display: none;
+    font-size: 1em;
     padding-left: 25px;
 }
 
 /* Anzeige, wenn ein Untermenü aktiv ist */
 .submenu.active {
     display: block;
-    font-size: 1.0em;
+    font-size: 1em;
     margin: 0;
     padding-left: 25;
 }
@@ -168,3 +169,16 @@
             text-decoration: none;
             cursor: pointer;
         }
+
+/* Anpassung für kleinere Bildschirme */
+@media (max-width: 768px) {
+    .submenu {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .submenu {
+        font-size: 0.8em;
+    }
+}
