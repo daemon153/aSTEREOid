@@ -27,7 +27,7 @@
 }
 
 .submenu a {
-    display: flex;
+    display: block;
     margin: 0;
     padding: 0;
 }
