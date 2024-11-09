@@ -35,4 +35,9 @@ body {
     height: 10vh;
     max-width: 300px; /* Optionale maximale Breite */
 }
-
+.player-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 20px;
+}
