@@ -171,6 +171,7 @@
             cursor: pointer;
         }
         .news-text {
+            font-weight: normal;
             text-align: justify;
             max-width: 50%; /* Maximal die Hälfte des Bildschirms */
             margin: 0 auto;
