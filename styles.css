@@ -175,7 +175,7 @@
             text-align: justify;
             max-width: 50%; /* Maximal die Hälfte des Bildschirms */
             margin: 0 auto;
-            padding-left: 25;
+            /* padding-left: 25; */
             line-height: 1.6;
             /* font-size: 14px; */
         }
