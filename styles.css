@@ -168,16 +168,32 @@
             text-decoration: none;
             cursor: pointer;
         }
+        .news-text {
+            text-align: justify;
+            max-width: 50%; /* Maximal die Hälfte des Bildschirms */
+            margin: 0 auto;
+            padding-left: 25;
+            line-height: 1.6;
+            /* font-size: 14px; */
+        }
 
 /* Anpassung für kleinere Bildschirme */
 @media (max-width: 768px) {
     .submenu.active {
         font-size: 0.8em;
+    } 
+    .news-text {
+        font-size: 0.8em;
+        max-width: 90%; /* Bei schmalen Bildschirmen mehr Platz geben */
     }
 }
 
 @media (max-width: 480px) {
     .submenu.active {
         font-size: 0.7em;
+    }
+    .news-text {
+      font-size: 0.7em;
+      max-width: 90%; /* Bei schmalen Bildschirmen mehr Platz geben */
     }
 }
