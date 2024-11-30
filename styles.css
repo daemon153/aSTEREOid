@@ -150,6 +150,7 @@
             width: 100%;
             max-width: 300px; /* Breite passt sich der Überschrift an */
             display: block;
+            padding: 5px;
         }
         .footer {
             z-index: 0;
