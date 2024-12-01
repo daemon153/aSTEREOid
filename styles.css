@@ -44,7 +44,7 @@
     bottom: 5; /* Platziert das Bild oben im Container */
     right: 0; /* Platziert das Bild am rechten Rand */
     width: 20%; /* Breite des Bildes anpassen */
-    max-width: 50px;
+    max-width: 150px;
     height: auto; /* Höhe wird entsprechend der Breite skaliert */
     padding: 10px;
 }
