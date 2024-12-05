@@ -2,7 +2,7 @@
 
 /* Dreieck Styling */
 .toggle-button {
-    font-size: 0.9em;
+    font-size: 1.0em;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -152,7 +152,7 @@
             width: 100%;
             max-width: 300px; /* Breite passt sich der Überschrift an */
             display: block;
-            padding: 5px;
+            margin: 5px;
             line-height: 1.3;
         }
         .footer {
@@ -184,14 +184,14 @@
             /* font-size: 14px; */
         }
 
-/* Anpassung für kleinere Bildschirme */
+/* Anpassung für kleinere Bildschirme 
 @media (max-width: 768px) {
     .submenu.active {
         font-size: 0.9em;
     } 
     .news-text {
         font-size: 0.9em;
-        max-width: 90%; /* Bei schmalen Bildschirmen mehr Platz geben */
+        max-width: 90%;
     }
 }
 
@@ -201,9 +201,9 @@
     }
     .news-text {
       font-size: 0.7em;
-      max-width: 90%; /* Bei schmalen Bildschirmen mehr Platz geben */
+      max-width: 90%; 
     }
     .footer {
         font-size: 0.5em;
     }
-}
+} */
