@@ -52,6 +52,15 @@
         </div>
     </div>
     <script>
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+      console.log('Service Worker registriert mit Scope:', registration.scope);
+    }).catch(function(error) {
+      console.log('Service Worker Registrierung fehlgeschlagen:', error);
+    });
+  }
+        
         document.addEventListener("DOMContentLoaded", function() {
             const passwordUrl = 'xp.json'; 
             let correctPassword = "";
