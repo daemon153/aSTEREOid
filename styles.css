@@ -2,6 +2,7 @@
 
 /* Dreieck Styling */
 .toggle-button {
+    font-size: 0.9em;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -186,10 +187,10 @@
 /* Anpassung für kleinere Bildschirme */
 @media (max-width: 768px) {
     .submenu.active {
-        font-size: 1.0em;
+        font-size: 0.9em;
     } 
     .news-text {
-        font-size: 1.0em;
+        font-size: 0.9em;
         max-width: 90%; /* Bei schmalen Bildschirmen mehr Platz geben */
     }
 }
